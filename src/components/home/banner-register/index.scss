@@ -1,0 +1,46 @@
+.custome-banner {
+    width: 100%;  
+    overflow: hidden; 
+    position: relative; 
+  
+    .image {
+      width: 100%; 
+      height: auto; 
+      display: block; 
+    }
+  
+    .text-register {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 3vw; 
+        font-weight: bold; 
+        text-align: center;
+      }
+     .button-register{
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5vw ; 
+        font-weight: bold; 
+        text-align: center;
+        border: 2px solid rgb(237, 140, 35);
+        border-radius: 5px;
+        background-color: #F36100;
+        padding: 8px 20px ;
+        cursor: pointer; 
+
+        &:hover {
+          background-color: rgb(237, 140, 35); 
+          color: white; 
+          border-color: #F36100; 
+        }
+     } 
+      
+      
+  }
+  

@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #001529;
+  padding: 0 20px;
+  height: 64px;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .auth-section {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; 
+    flex-shrink: 0; 
+  } 
+
+  .ant-menu-horizontal {
+    border-bottom: none;
+  }
+}
+
+.menu-container {
+  flex-grow: 1; 
+  margin-left: 25px; 
+  margin-right: 25px; 
+  overflow-x: auto; 
+  white-space: nowrap; 
+}
+.scroll-item {
+  overflow-x: auto;  
+  overflow-y: hidden; 
+  white-space: nowrap; 
+  display: flex;
+  justify-content: center; 
+}
+@media screen and (max-width: 768px) {
+  .auth-section {
+    justify-content: flex-end;
+    flex-shrink: 1; 
+  }
+
+  .menu-container {
+    margin-left: 10px; 
+    margin-right: 10px;
+  }
+}
+.nav-brand{
+  color: white;
+
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out; 
+}
+.menu-container .ant-menu-item-selected {
+  background-color: orange !important; 
+  color: white !important; 
+}
+.menu-container .ant-menu-item:hover {
+  color: orange !important;
+}

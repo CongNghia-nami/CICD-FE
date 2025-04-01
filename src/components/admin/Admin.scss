@@ -1,0 +1,10 @@
+.admin-container {
+  display: flex;
+  .admin-sidebar {
+    position: relative;
+  }
+  .admin-content {
+    width: 100%;
+    padding: 30px 30px;
+  }
+}
