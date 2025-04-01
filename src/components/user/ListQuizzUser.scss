@@ -1,0 +1,28 @@
+.container-design {
+  background-color: aqua;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 1.6rem;
+  gap: 1rem;
+}
+
+.main {
+  margin: 8px 0px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 464px) {
+  .main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

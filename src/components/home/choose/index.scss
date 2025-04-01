@@ -1,0 +1,71 @@
+
+.choose{
+    background-color: #000000;
+}
+.customize {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px; 
+  
+    .reason {
+      text-align: center; 
+      margin-bottom: 20px;
+    }
+  }
+
+.customize-device {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 5px; 
+    
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: auto; 
+    }
+  }
+  
+  .border-around {
+    border: 1px solid #e3dfdf; 
+    padding: 1%; 
+    margin: 2%; 
+    flex: 1; 
+    box-sizing: border-box; 
+  }
+
+.customize{
+    background-color: #000000;
+}
+.write-why{
+    display: flex;
+    color: #F36100;
+    justify-content: center; 
+    font-weight: bolder;
+    font-size: 24px;
+
+}
+@keyframes blink {
+    0% {
+      color: #F36100; 
+    }
+    50% {
+      color: #FFFFFF; 
+    }
+    100% {
+      color: #F36100; 
+    }
+  }
+.write-custome{
+    animation: blink 1s ease-in-out infinite; 
+    display: flex;
+    color: #efe7e7;
+    justify-content: center; 
+    font-weight: bolder;
+    font-size: 18px 3vw;
+}
+.write-small{
+    display: flex;
+    color: #cec0c0;
+    font-weight: bolder;
+    font-size: 14px;
+}
+

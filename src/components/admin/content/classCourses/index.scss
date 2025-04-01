@@ -1,0 +1,47 @@
+.courses-page {
+  width: 100%; 
+  overflow-x: auto;
+}
+.custom-page {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap; 
+  gap: 15px;
+}
+
+.input-page {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 2%;
+}
+
+.table-container {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .custom-page {
+    flex-direction: column; 
+  }
+
+  .input-page {
+    flex-direction: column; 
+    width: 100%; 
+  }
+
+  .table-container {
+    width: 100%; 
+    overflow-x: auto; 
+  }
+  .list-discount{
+      flex-direction: row; 
+  }
+
+}
+
+.list-discount{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}

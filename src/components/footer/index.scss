@@ -1,0 +1,30 @@
+.footer {
+    background-color: #0A0A0A;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer-icons {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+  }
+  
+  .footer-icon {
+    display: flex;
+    align-items: center;
+    font-size: 3vh;
+    margin: 10px;
+  }
+  
+  .footer-icon i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #F36100;
+  }
+  
+  .footer-icon span {
+    font-size: 16px;
+  }
+  

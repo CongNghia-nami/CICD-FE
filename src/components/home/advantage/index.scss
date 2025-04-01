@@ -1,0 +1,104 @@
+.advantage{
+    background-color: #200E00;
+}
+.custome-advantage{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #200E00;
+}
+
+.write-why{
+    display: flex;
+    color: #F36100;
+    justify-content: center; 
+    font-weight: bolder;
+    font-size: 2.5vw;
+    margin-bottom: 2%;
+}
+.icon-margin{
+    gap:5px;
+}
+.design-text{
+    display: flex;
+}
+.custome-text{
+    display: flex;
+    flex-direction: column; 
+}
+.style-card{
+    position: relative;
+}
+.design-text{
+    position: absolute;
+    bottom: 14%;
+    right:9%
+}
+.strength-text{
+    color: #CE260A;
+    font-size: 16px;
+    font-weight: bolder;
+    font-family: sans-serif;
+}
+.box-text{
+    color: #F36100;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: sans-serif;   
+}
+.custome-three{
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+}
+.custome-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 5px; 
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: auto; 
+    }
+  }
+
+.style-card {
+    .ant-card-cover img {
+      transition: transform 0.4s ease-in-out; 
+    }
+    .ant-card-hoverable:hover .ant-card-cover img {
+      transform: scale(1.1); 
+    }
+}
+
+
+.custome-two{
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+}
+
+.custome-grid3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 5px; 
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: auto; 
+    }
+  }
+.style-card2{
+    position: relative;
+}
+.design-text2{
+    position: absolute;
+    bottom: 10%;
+    right:4%
+  }
+.style-card2 {
+    .ant-card-cover img {
+      transition: transform 0.4s ease-in-out; 
+    }
+    .ant-card-hoverable:hover .ant-card-cover img {
+      transform: scale(1.1); 
+    }
+}
