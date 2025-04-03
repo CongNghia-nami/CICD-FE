@@ -2,7 +2,7 @@ name: Docker Build and Deploy
 
 on:
   push:
-     branches:
+    branches:
       - main
   workflow_dispatch:
 
@@ -22,13 +22,16 @@ jobs:
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Convert repository name to lowercase
+        run: echo "REPO_NAME=$(echo ${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_PROJECT }}/${{ github.event.repository.name }}:${{ github.ref_name }}_${{ github.sha }} .
+          docker build -t ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_PROJECT }}/$REPO_NAME:${{ github.ref_name }}_${{ github.sha }} .
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_PROJECT }}/${{ github.event.repository.name }}:${{ github.ref_name }}_${{ github.sha }}
+          docker push ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_PROJECT }}/$REPO_NAME:${{ github.ref_name }}_${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -45,12 +48,12 @@ jobs:
 
       - name: Pull Docker image
         run: |
-          docker pull ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_PROJECT }}/${{ github.event.repository.name }}:${{ github.ref_name }}_${{ github.sha }}
+          docker pull ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_PROJECT }}/$REPO_NAME:${{ github.ref_name }}_${{ github.sha }}
 
       - name: Remove old container
         run: |
-          docker rm -f ${{ github.event.repository.name }} || true
+          docker rm -f $REPO_NAME || true
 
       - name: Run new container
         run: |
-          docker run --name ${{ github.event.repository.name }} -dp 3000:3000 ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_PROJECT }}/${{ github.event.repository.name }}:${{ github.ref_name }}_${{ github.sha }}
+          docker run --name $REPO_NAME -dp 3000:3000 ${{ secrets.REGISTRY_URL }}/${{ secrets.REGISTRY_PROJECT }}/$REPO_NAME:${{ github.ref_name }}_${{ github.sha }}
