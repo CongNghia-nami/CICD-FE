@@ -40,11 +40,6 @@ jobs:
     env:
       GIT_STRATEGY: none  # Prevent fetching the source code during deploy
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0   # Only fetch history if needed
-
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
