@@ -9,9 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
+    env:
       GIT_STRATEGY: clone  # Force a fresh clone of the repository
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -38,9 +37,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment:
+    env:
       GIT_STRATEGY: none  # Prevent fetching the source code during deploy
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
