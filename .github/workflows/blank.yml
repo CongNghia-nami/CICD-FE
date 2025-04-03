@@ -13,7 +13,7 @@ jobs:
       GIT_STRATEGY: clone  # Force a fresh clone of the repository
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0   # Ensures the full git history is pulled if needed
       - name: Ensure latest code is pulled
