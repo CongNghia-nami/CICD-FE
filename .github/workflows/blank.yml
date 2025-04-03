@@ -8,9 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # Sử dụng self-hosted runner
+
     env:
       GIT_STRATEGY: clone  # Force a fresh clone of the repository
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -39,7 +41,7 @@ jobs:
           docker push haianhx27/deployfe:${{ github.ref_name }}_${{ github.sha }}
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # Sử dụng self-hosted runner
     needs: build
     env:
       GIT_STRATEGY: none  # Prevent fetching the source code during deploy
