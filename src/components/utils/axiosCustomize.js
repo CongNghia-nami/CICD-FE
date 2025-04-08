@@ -2,7 +2,7 @@ import axios from 'axios';
 import store from "../../store/index";  
 
 const instance = axios.create({
-  baseURL: "/api",
+  baseURL: "/",
 });
 
 instance.interceptors.request.use(
