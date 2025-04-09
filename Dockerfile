@@ -23,7 +23,7 @@ FROM nginx:1.23-alpine
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose port 3000
-EXPOSE 3000
+EXPOSE 80
 
 # Replace default Nginx config with custom config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
