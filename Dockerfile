@@ -27,7 +27,7 @@ EXPOSE 80
 EXPOSE 443
 
 # Replace default Nginx config with custom config
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
