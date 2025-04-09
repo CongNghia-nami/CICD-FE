@@ -57,7 +57,7 @@ jobs:
 
       - name: Run new container
         run: |
-          docker run --name deployfe -dp 3000:3000 haianhx27/deployfe:${{ github.ref_name }}_${{ github.sha }}
+          docker run --name deployfe -dp 80:80 haianhx27/deployfe:${{ github.ref_name }}_${{ github.sha }}
       - name: SSH vào EC2 bằng root và git pull code mới
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > ec2_key.pem
